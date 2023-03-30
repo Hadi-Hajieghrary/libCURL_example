@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/hadi/WorkSpace/cpp_ws/learning-CURL/build",
+  "command": "/usr/bin/g++    -g   -o CMakeFiles/learning_curl.dir/main.cpp.o -c /home/hadi/WorkSpace/cpp_ws/learning-CURL/main.cpp",
+  "file": "/home/hadi/WorkSpace/cpp_ws/learning-CURL/main.cpp"
+}
+]

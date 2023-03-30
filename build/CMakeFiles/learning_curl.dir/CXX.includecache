@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hadi/WorkSpace/cpp_ws/learning-CURL/main.cpp
+iostream
+-
+cstring
+-
+curl/curl.h
+-
+

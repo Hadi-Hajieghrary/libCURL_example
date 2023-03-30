@@ -1,0 +1,5 @@
+/home/hadi/WorkSpace/cpp_ws/learning-CURL/build/CMakeFiles/edit_cache.dir
+/home/hadi/WorkSpace/cpp_ws/learning-CURL/build/CMakeFiles/package_source.dir
+/home/hadi/WorkSpace/cpp_ws/learning-CURL/build/CMakeFiles/rebuild_cache.dir
+/home/hadi/WorkSpace/cpp_ws/learning-CURL/build/CMakeFiles/package.dir
+/home/hadi/WorkSpace/cpp_ws/learning-CURL/build/CMakeFiles/learning_curl.dir

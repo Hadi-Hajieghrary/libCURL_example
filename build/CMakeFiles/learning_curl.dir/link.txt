@@ -1,0 +1,1 @@
+/usr/bin/g++  -g  -rdynamic CMakeFiles/learning_curl.dir/main.cpp.o  -o learning_curl  -lcurl 
