@@ -38,8 +38,18 @@ int main(int, char**) {
     curl_handle = curl_easy_init();
     RecievedData output_data;
 
+    constexpr size_t error_buffer_size{1000};
+    char error_buffer[error_buffer_size];
+
     if(curl_handle){
-        curl_easy_setopt(curl_handle, CURLOPT_URL, "https://example.com/");
+        // Set the verbose to 1 so you will get more info in case of error
+        curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1L);
+        // Include the responce Header in the data output stream.
+        curl_easy_setopt(curl_handle, CURLOPT_HEADER, 0L);
+
+        curl_easy_setopt(curl_handle, CURLOPT_ERRORBUFFER, &error_buffer);
+
+        curl_easy_setopt(curl_handle, CURLOPT_URL, "https://www.example.com/");
         // If we do not set the CallBack function, which determines what should happen to the recieved data
         // the recived data will be sent to the standard output.
         curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, writeCallBack);
@@ -48,7 +58,11 @@ int main(int, char**) {
         // This is a blocking process.
         CURLcode res = curl_easy_perform(curl_handle);
         if(res != CURLE_OK){
-            std::cout<< curl_easy_strerror(res)<<std::endl;
+            //std::cout<< curl_easy_strerror(res)<<std::endl;
+            std::cout<<"Error: "<<error_buffer<<std::endl;
+            curl_easy_cleanup(curl_handle);
+            curl_global_cleanup();
+            return 1;
         }
         std::cout<<"Size of the Recieved Data: "<<output_data.size_<<std::endl;
         std::cout<<"Content of the Recieved Data: \n"<<output_data.content_<<std::endl;
